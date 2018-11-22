@@ -152,7 +152,8 @@ module.exports = {
     this._setValue(value);
     this._validate(value);
 
-    this.props.onValueChange && this.props.onValueChange();
+    var values = GiftedFormManager.getValues(this.props.formName);
+    this.props.onValueChange && this.props.onValueChange(value);
     // @todo modal widgets validation - the modalwidget row should inform about validation status
   },
 
